@@ -26,11 +26,12 @@ function Home() {
       <div className="container">
         <div className="row">
           <div className="col-8">
-            {loading ? <Spinner className="mt-5" animation="border" /> : ""}
+           
           </div>
           <div className="col-md-4 mt-5">
             <SearchCards setMovie={setMovie} movie={movie} />
           </div>
+          {loading ? <Spinner className="mt-5" animation="border" /> : ""}
           {movie.length == 0
             ? movies.map((value) => {
                 return (
