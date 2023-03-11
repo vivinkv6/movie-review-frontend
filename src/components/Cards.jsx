@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import { formatDistance, subDays } from "date-fns";
+import { formatDistanceToNow, subDays } from "date-fns";
 
 function Cards({ key, title, description, rating, createdAt }) {
   return (
@@ -24,9 +24,7 @@ function Cards({ key, title, description, rating, createdAt }) {
             <footer className="blockquote-footer mt-3">
               <i></i>
               <i>
-                {formatDistance(
-                  subDays(new Date(), new Date(createdAt).getDay()),
-                  new Date(),
+                {formatDistanceToNow(new Date(createdAt),
                   { addSuffix: true }
                 )}
               </i>
