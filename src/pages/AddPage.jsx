@@ -61,6 +61,7 @@ function AddPage() {
                   placeholder="Movie Title..."
                   onChange={(e) => setTitle(e.target.value)}
                   value={title}
+                  required
                 />
               </div>
 
@@ -77,6 +78,7 @@ function AddPage() {
                   cols="50"
                   onChange={(e) => setDescription(e.target.value)}
                   value={description}
+                  required
                 ></textarea>
               </div>
 
@@ -93,6 +95,7 @@ function AddPage() {
                   placeholder="maximum: 5"
                   onChange={(e) => setRating(e.target.value)}
                   value={rating}
+                  required
                 />
               </div>
               <center>
