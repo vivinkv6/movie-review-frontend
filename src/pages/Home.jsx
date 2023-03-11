@@ -46,7 +46,7 @@ function Home() {
                 );
               })
             : movies
-                .filter((value) => /value.title/ig == /movie/ig)
+                .filter((value) => value.title == movie)
                 .map((value) => {
                   return (
                     <>
