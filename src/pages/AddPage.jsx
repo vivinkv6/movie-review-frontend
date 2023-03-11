@@ -47,13 +47,14 @@ function AddPage() {
       <div className="container">
         <fieldset>
           <form action="">
+            <h1 className="text-center mt-3" style={{fontWeight:'bold'}}>Create New Movie Review</h1>
             <div className="row">
-              <div className="col-md-6 mt-5">
+              <div className="col-md-6 mt-3">
                 <label for="exampleFormControlInput1" className="form-label">
                   Title
                 </label>
               </div>
-              <div className="col-md-6 mt-5">
+              <div className="col-md-6 mt-3">
                 <input
                   type="text"
                   className="form-control w-75"
