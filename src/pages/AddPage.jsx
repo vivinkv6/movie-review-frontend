@@ -1,12 +1,16 @@
 import React, { useState } from "react";
+import Alert from "react-bootstrap/Alert";
 
 function AddPage() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [rating, setRating] = useState(0);
-
+  const [successAlert, setSuccessAlert] = useState(false);
+  const [failureAlert, setFailureAlert] = useState(false);
   const submition = async (e) => {
     e.preventDefault();
+    setFailureAlert(false);
+    setSuccessAlert(false);
     const data = { title, description, rating };
     console.log(data);
     const res = await fetch(import.meta.env.VITE_BACKEND_URL, {
@@ -20,7 +24,18 @@ function AddPage() {
     const json = res.json();
 
     if (res.ok) {
-      console.log("Added successfully", json);
+      console.log("Create successfully");
+      setSuccessAlert(true);
+      setFailureAlert(false);
+      setTitle("");
+      setDescription("");
+      setRating(0);
+    }
+
+    if (!res.ok) {
+      console.log("Something went wrong.Please Try again Later");
+      setSuccessAlert(false);
+      setFailureAlert(true);
       setTitle("");
       setDescription("");
       setRating(0);
@@ -59,6 +74,7 @@ function AddPage() {
                   className="form-control"
                   id="exampleFormControlTextarea1"
                   rows="3"
+                  cols="50"
                   onChange={(e) => setDescription(e.target.value)}
                   value={description}
                 ></textarea>
@@ -88,6 +104,26 @@ function AddPage() {
           </form>
         </fieldset>
       </div>
+
+      {successAlert ? (
+        <center>
+          <Alert variant={"success"} className="mt-5 w-50">
+            Create successfully
+          </Alert>
+        </center>
+      ) : (
+        <></>
+      )}
+
+      {failureAlert ? (
+        <center>
+          <Alert variant={"danger"} className="mt-5 w-50">
+            Something went wrong.Please Try again Later
+          </Alert>
+        </center>
+      ) : (
+        <></>
+      )}
     </>
   );
 }

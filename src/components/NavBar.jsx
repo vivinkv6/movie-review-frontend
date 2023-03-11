@@ -10,7 +10,7 @@ function NavBar() {
           <Navbar.Brand>
             <Link to="/">
               <img
-                src={"../../public/logo.png"}
+                src={`${import.meta.env.VITE_LOGO}`}
                 width="100"
                 height="100"
                 className="d-inline-block align-top"
