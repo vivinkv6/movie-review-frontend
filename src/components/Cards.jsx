@@ -5,7 +5,7 @@ import { formatDistanceToNow, subDays } from "date-fns";
 function Cards({ key, title, description, rating, createdAt }) {
   return (
     <>
-      <Card className="mt-3 me-2" style={{ width: "25rem" }} key={key}>
+      <Card className="mt-3 me-2" style={{ width: "25rem",backgroundColor:'#d4d4d4' }} key={key}>
         <Card.Body>
           <div className="row">
             <div className="col-8">

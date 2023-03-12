@@ -12,7 +12,6 @@ function Home() {
     setLoading(true);
     const res = await fetch(import.meta.env.VITE_BACKEND_URL);
     const data = await res.json();
-    console.log(data);
     setMovies(data);
     setLoading(false);
   };
@@ -25,9 +24,7 @@ function Home() {
     <>
       <div className="container">
         <div className="row">
-          <div className="col-8">
-           
-          </div>
+          <div className="col-8"></div>
           <div className="col-md-4 mt-5">
             <SearchCards setMovie={setMovie} movie={movie} />
           </div>
