@@ -94,6 +94,7 @@ function AddPage() {
                   className="form-control w-25"
                   id="exampleFormControlInput1"
                   placeholder="maximum: 5"
+                  min="1" max="5"
                   onChange={(e) => setRating(e.target.value)}
                   value={rating}
                   required
